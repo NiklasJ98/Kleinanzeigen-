@@ -17,6 +17,7 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.TableGenerator;
 import javax.validation.constraints.NotNull;
@@ -40,8 +41,12 @@ public class Category implements Serializable {
     @Size(min = 3, max = 30, message = "Der Name muss zwischen drei und 30 Zeichen lang sein.")
     private String name;
 
-    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
+  /*  @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
     List<Task> tasks = new ArrayList<>();
+*/    
+
+    @ManyToOne
+    private Anzeige anzeige = new Anzeige();
 
     //<editor-fold defaultstate="collapsed" desc="Konstruktoren">
     public Category() {
@@ -69,13 +74,13 @@ public class Category implements Serializable {
         this.name = name;
     }
 
-    public List<Task> getTasks() {
-        return tasks;
-    }
-
-    public void setTasks(List<Task> tasks) {
-        this.tasks = tasks;
-    }
+//    public List<Task> getTasks() {
+//        return tasks;
+//    }
+//
+//    public void setTasks(List<Task> tasks) {
+//        this.tasks = tasks;
+//    }
     //</editor-fold>
 
 }

@@ -20,9 +20,9 @@ import javax.persistence.OneToMany;
  *
  * @author nfi
  */
-@Entity
+//@Entity
 public class Benutzer {
-
+/*
     public Benutzer() {
     }
     
@@ -40,8 +40,8 @@ public class Benutzer {
     
     private String email;
     
-    /*@OneToMany(mappedBy="benutzer")
-    List<Anzeige> anzeige = new ArrayList<>();*/
+    @OneToMany(mappedBy="benutzer")
+    List<Anzeige> anzeige = new ArrayList<>();
 
     public String getName() {
         return name;
@@ -92,5 +92,5 @@ public class Benutzer {
     }
     
     
-    
+ */
 }

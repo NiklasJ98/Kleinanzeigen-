@@ -20,7 +20,7 @@ import javax.persistence.*;
  */
 //@Entity
 public class Anzeige implements Serializable {
-/*
+
     public Anzeige() {
     }
     
@@ -44,9 +44,9 @@ public class Anzeige implements Serializable {
     
     
     @ManyToOne 
-    private Benutzer nutzer = new Benutzer();
+    private User user = new User();
     
-    //@OneToMany(mappedBy="anzeige")
+    @OneToMany(mappedBy= "Anzeige")
     List<Category> category = new ArrayList<>();
 
     public String getErsteller() {
@@ -102,6 +102,5 @@ public class Anzeige implements Serializable {
 
 
 
-    */
     
 }

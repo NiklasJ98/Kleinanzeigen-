@@ -64,9 +64,12 @@ public class User implements Serializable {
     @Column(name = "GROUPNAME")
     List<String> groups = new ArrayList<>();
 
-    @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
-    List<Task> tasks = new ArrayList<>();
-    /*
+   // @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
+   // List<Task> tasks = new ArrayList<>();
+    
+    @OneToMany(mappedBy = "User")
+    List<Anzeige> anzeige = new ArrayList<>();
+
     private String anschrift;
     
     private String plz;
@@ -76,7 +79,9 @@ public class User implements Serializable {
     private String telefon;
     
     private String email;
-*/
+    
+    
+
     //<editor-fold defaultstate="collapsed" desc="Konstruktoren">
     public User() {
     }
@@ -97,14 +102,14 @@ public class User implements Serializable {
         this.username = id;
     }
 
-    public List<Task> getTasks() {
-        return tasks;
-    }
+  //  public List<Task> getTasks() {
+    //    return tasks;
+   // }
 
-    public void setTasks(List<Task> tasks) {
+  /*  public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
-    }
-/*
+    }*/
+
     public String getAnschrift() {
         return anschrift;
     }
@@ -144,7 +149,7 @@ public class User implements Serializable {
     public void setEmail(String email) {
         this.email = email;
     }
-    */
+   
     
     //</editor-fold>
 
