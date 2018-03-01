@@ -9,6 +9,7 @@
  */
 package dhbwka.wwi.vertsys.javaee.kleinanzeigen_portfolio_1.jpa;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.*;
@@ -17,9 +18,9 @@ import javax.persistence.*;
  *
  * @author nfi
  */
-@Entity
-public class Anzeige {
-
+//@Entity
+public class Anzeige implements Serializable {
+/*
     public Anzeige() {
     }
     
@@ -45,7 +46,7 @@ public class Anzeige {
     @ManyToOne 
     private Benutzer nutzer = new Benutzer();
     
-    @OneToMany(mappedBy="anzeige")
+    //@OneToMany(mappedBy="anzeige")
     List<Category> category = new ArrayList<>();
 
     public String getErsteller() {
@@ -101,6 +102,6 @@ public class Anzeige {
 
 
 
-    
+    */
     
 }

@@ -66,7 +66,17 @@ public class User implements Serializable {
 
     @OneToMany(mappedBy = "owner", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     List<Task> tasks = new ArrayList<>();
-
+    /*
+    private String anschrift;
+    
+    private String plz;
+    
+    private String ort;
+    
+    private String telefon;
+    
+    private String email;
+*/
     //<editor-fold defaultstate="collapsed" desc="Konstruktoren">
     public User() {
     }
@@ -94,6 +104,48 @@ public class User implements Serializable {
     public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
     }
+/*
+    public String getAnschrift() {
+        return anschrift;
+    }
+
+    public void setAnschrift(String anschrift) {
+        this.anschrift = anschrift;
+    }
+
+    public String getPlz() {
+        return plz;
+    }
+
+    public void setPlz(String plz) {
+        this.plz = plz;
+    }
+
+    public String getOrt() {
+        return ort;
+    }
+
+    public void setOrt(String ort) {
+        this.ort = ort;
+    }
+
+    public String getTelefon() {
+        return telefon;
+    }
+
+    public void setTelefon(String telefon) {
+        this.telefon = telefon;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    */
+    
     //</editor-fold>
 
     //<editor-fold defaultstate="collapsed" desc="Passwort setzen und prüfen">

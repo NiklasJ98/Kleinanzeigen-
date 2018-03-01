@@ -40,8 +40,8 @@ public class Benutzer {
     
     private String email;
     
-    @OneToMany(mappedBy="benutzer")
-    List<Anzeige> anzeige = new ArrayList<>();
+    /*@OneToMany(mappedBy="benutzer")
+    List<Anzeige> anzeige = new ArrayList<>();*/
 
     public String getName() {
         return name;
