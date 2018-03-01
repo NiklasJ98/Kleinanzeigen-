@@ -10,6 +10,7 @@
 package dhbwka.wwi.vertsys.javaee.kleinanzeigen_portfolio_1.ejb;
 
 import dhbwka.wwi.vertsys.javaee.kleinanzeigen_portfolio_1.jpa.User;
+import static dhbwka.wwi.vertsys.javaee.kleinanzeigen_portfolio_1.jpa.User_.*;
 import javax.annotation.Resource;
 import javax.annotation.security.RolesAllowed;
 import javax.ejb.EJBContext;
@@ -49,7 +50,7 @@ public class UserBean {
             throw new UserAlreadyExistsException("Der Benutzername $B ist bereits vergeben.".replace("$B", username));
         }
 
-        User user = new User(username, password);
+        User user = new User(username, password, anschrift, plz, ort, telefon, email);
         user.addToGroup("kleinanzeigen-app-user");
         em.persist(user);
     }

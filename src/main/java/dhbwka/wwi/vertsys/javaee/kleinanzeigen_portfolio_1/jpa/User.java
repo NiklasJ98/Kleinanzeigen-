@@ -27,6 +27,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.persistence.metamodel.SingularAttribute;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -44,6 +45,10 @@ public class User implements Serializable {
     @Size(min = 5, max = 64, message = "Der Benutzername muss zwischen fünf und 64 Zeichen lang sein.")
     @NotNull(message = "Der Benutzername darf nicht leer sein.")
     private String username;
+
+    public User(String username, String password, SingularAttribute<User, String> anschrift, SingularAttribute<User, String> plz, SingularAttribute<User, String> ort, SingularAttribute<User, String> telefon, SingularAttribute<User, String> email) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     public class Password {
         @Size(min = 6, max = 64, message = "Das Passwort muss zwischen sechs und 64 Zeichen lang sein.")
@@ -86,10 +91,17 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String username, String password) {
+    public User(String username, String password, String anschrift, String plz, String ort, String telefon, String email) {
         this.username = username;
         this.password.password = password;
         this.passwordHash = this.hashPassword(password);
+        
+        this.anschrift = anschrift;
+        this.plz = plz;
+        this.ort = ort;
+        this.telefon = telefon;
+        this.email = email;
+        
     }
     //</editor-fold>
 

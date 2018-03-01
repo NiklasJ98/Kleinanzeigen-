@@ -12,6 +12,11 @@ package dhbwka.wwi.vertsys.javaee.kleinanzeigen_portfolio_1.web;
 import dhbwka.wwi.vertsys.javaee.kleinanzeigen_portfolio_1.ejb.ValidationBean;
 import dhbwka.wwi.vertsys.javaee.kleinanzeigen_portfolio_1.ejb.UserBean;
 import dhbwka.wwi.vertsys.javaee.kleinanzeigen_portfolio_1.jpa.User;
+import static dhbwka.wwi.vertsys.javaee.kleinanzeigen_portfolio_1.jpa.User_.anschrift;
+import static dhbwka.wwi.vertsys.javaee.kleinanzeigen_portfolio_1.jpa.User_.email;
+import static dhbwka.wwi.vertsys.javaee.kleinanzeigen_portfolio_1.jpa.User_.ort;
+import static dhbwka.wwi.vertsys.javaee.kleinanzeigen_portfolio_1.jpa.User_.plz;
+import static dhbwka.wwi.vertsys.javaee.kleinanzeigen_portfolio_1.jpa.User_.telefon;
 import java.io.IOException;
 import java.util.List;
 import javax.ejb.EJB;
@@ -61,7 +66,7 @@ public class SignUpServlet extends HttpServlet {
         String password2 = request.getParameter("signup_password2");
         
         // Eingaben prüfen
-        User user = new User(username, password1);
+        User user = new User(username, password1, anschrift, plz, ort, telefon, email);
         List<String> errors = this.validationBean.validate(user);
         this.validationBean.validate(user.getPassword(), errors);
         

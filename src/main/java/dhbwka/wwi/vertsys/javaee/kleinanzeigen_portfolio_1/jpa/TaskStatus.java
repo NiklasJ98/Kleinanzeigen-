@@ -13,13 +13,13 @@ package dhbwka.wwi.vertsys.javaee.kleinanzeigen_portfolio_1.jpa;
  * Statuswerte einer Aufgabe.
  */
 
-/*
+
 public enum TaskStatus {
     OPEN, IN_PROGRESS, FINISHED, CANCELED, POSTPONED;
 
-     * Bezeichnung ermitteln
-     *
-     * @return Bezeichnung
+//     * Bezeichnung ermitteln
+//     *
+//     * @return Bezeichnung
  
     public String getLabel() {
         switch (this) {
@@ -38,4 +38,4 @@ public enum TaskStatus {
         }
 
 }
-*/
+}
